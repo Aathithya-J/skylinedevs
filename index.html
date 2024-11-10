@@ -3,77 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JBuilders</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f2f2f2;
-        }
-
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        h2 {
-            color: #333;
-        }
-
-        p {
-            line-height: 1.6;
-            color: #555;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
+    <title>JBuild Construction</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>JBuilders</h1>
-        <p>Building a Better Future</p>
+    <!-- Header with Navbar -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">J<span class="highlight">Build</span></div>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <section>
-        <h2>About Us</h2>
-        <p>JBuilders is a leading engineering company dedicated to providing innovative solutions for a variety of projects. With a team of experienced professionals, we deliver high-quality results that meet and exceed our clients' expectations.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>Building <span>Your Vision</span> Into Reality</h1>
+            <p>Your trusted partner for innovative construction solutions.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn">Explore More</a>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h2>Our Services</h2>
-        <p>We offer a wide range of engineering services, including but not limited to:</p>
-        <ul>
-            <li>Structural Engineering</li>
-            <li>Civil Engineering</li>
-            <li>Mechanical Engineering</li>
-            <li>Electrical Engineering</li>
-        </ul>
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Expertise</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>Architecture</h3>
+                    <p>Transforming spaces with creative and functional designs.</p>
+                </div>
+                <div class="card">
+                    <h3>Construction</h3>
+                    <p>Delivering quality construction for all types of projects.</p>
+                </div>
+                <div class="card">
+                    <h3>Project Management</h3>
+                    <p>Managing projects efficiently to ensure timely completion.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        &copy; 2023 JBuilders. All rights reserved.
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>Our Projects</h2>
+            <div class="project-gallery">
+                <!-- Example Project Items -->
+                <div class="project-item">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                    <h3>Project One</h3>
+                </div>
+                <div class="project-item">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                    <h3>Project Two</h3>
+                </div>
+                <div class="project-item">
+                    <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                    <h3>Project Three</h3>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>Phone</h3>
+                <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            </div>
+            <div class="contact-item">
+                <h3>Email</h3>
+                <p><a href="mailto:info@jbuild.com">info@jbuild.com</a></p>
+            </div>
+        </div>
+        <div class="contact-buttons">
+            <a href="tel:+1234567890" class="btn btn-primary">Call Us</a>
+            <a href="mailto:info@jbuild.com" class="btn btn-secondary">Email Us</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 JBuild Construction. Building with Integrity.</p>
+        </div>
     </footer>
 
+    <!-- JavaScript for Navbar Toggle -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            hamburger.classList.toggle('toggle');
+        });
+
+        // Close the navbar when a link is clicked (optional)
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('nav-active');
+                hamburger.classList.remove('toggle');
+            });
+        });
+    </script>
 </body>
 </html>
