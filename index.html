@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JBuild Construction</title>
+    <title>SkylineDevs</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,12 +11,11 @@
     <!-- Header with Navbar -->
     <header class="header">
         <div class="container">
-            <div class="logo">J<span class="highlight">Build</span></div>
+            <div class="logo">Skyline<span class="highlight">Devs</span></div>
             <nav class="nav">
                 <ul class="nav-links">
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="hamburger">
@@ -33,7 +32,7 @@
         <div class="overlay"></div>
         <div class="hero-content">
             <h1>Building <span>Your Vision</span> Into Reality</h1>
-            <p>Your trusted partner for innovative construction solutions.</p>
+            <p>Your trusted partner for innovative website solutions.</p>
             <div class="hero-buttons">
                 <a href="#services" class="btn">Explore More</a>
                 <a href="#contact" class="btn btn-secondary">Contact Us</a>
@@ -47,8 +46,8 @@
             <h2>Our Expertise</h2>
             <div class="service-cards">
                 <div class="card">
-                    <h3>Architecture</h3>
-                    <p>Transforming spaces with creative and functional designs.</p>
+                    <h3>Design</h3>
+                    <p>Transforming spaces with creative, simple yet functional designs.</p>
                 </div>
                 <div class="card">
                     <h3>Construction</h3>
@@ -61,56 +60,55 @@
             </div>
         </div>
     </section>
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
+    <!-- UPS Section (Unique Selling Proposition) -->
+<!-- UPS Section (Unique Selling Proposition) -->
+<section class="ups" id="ups">
+    <div class="ups-background">
         <div class="container">
-            <h2>Our Projects</h2>
-            <div class="project-gallery">
-                <!-- Example Project Items -->
-                <div class="project-item">
-                    <img src="https://via.placeholder.com/300x200" alt="Project 1">
-                    <h3>Project One</h3>
+            <h2>Why Choose Us?</h2>
+            <p class="ups-description">Explore our core strengths and discover why we're the best choice for your needs.</p>
+            <br>
+            <br>
+            <div class="ups-content">
+                <div class="ups-item">
+                    <h3>Innovative Solutions</h3>
+                    <p>We offer creative solutions tailored to meet your specific needs and challenges.</p>
+                    <span class="icon">🚀</span>
                 </div>
-                <div class="project-item">
-                    <img src="https://via.placeholder.com/300x200" alt="Project 2">
-                    <h3>Project Two</h3>
+                <div class="ups-item">
+                    <h3>Reliable Performance</h3>
+                    <p>Our service is designed for reliability and efficiency, ensuring a smooth experience every time.</p>
+                    <span class="icon">⚡</span>
                 </div>
-                <div class="project-item">
-                    <img src="https://via.placeholder.com/300x200" alt="Project 3">
-                    <h3>Project Three</h3>
+                <div class="ups-item">
+                    <h3>Customer First</h3>
+                    <p>We put your satisfaction first, always striving to exceed your expectations with personalized care.</p>
+                    <span class="icon">💖</span>
                 </div>
-                <!-- Add more projects as needed -->
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-<section class="contact" id="contact">
-    <div class="container">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <h3>Phone</h3>
-                <p><a href="tel:+6593839834">+6593839834</a></p>
-            </div>
-            <div class="contact-item">
-                <h3>Email</h3>
-                <p><a href="mailto:info@jbuild.com">info@jbuild.com</a></p>
-            </div>
-        </div>
-        <div class="contact-buttons">
-            <a href="tel:+6593839834" class="btn btn-primary">Call Us</a>
-            <a href="mailto:info@jbuild.com" class="btn btn-secondary">Email Us</a>
         </div>
     </div>
 </section>
 
 
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p class="contact-description">Reach out to us via Email or Telegram. We’d love to hear from you!</p>
+
+            <div class="contact-buttons">
+                <button class="btn btn-primary" id="email-secondary-btn">Send an Email</button>
+                <a href="https://t.me/Aathithya_J" class="btn btn-secondary" target="_blank">Message on Telegram</a>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>© 2024 JBuild Construction. Building with Integrity.</p>
+            <p>© 2024 SkylineDevs. Building with Integrity.</p>
         </div>
     </footer>
 
@@ -132,6 +130,21 @@
                 hamburger.classList.remove('toggle');
             });
         });
+        // JavaScript to Handle Email
+        document.getElementById('email-btn').addEventListener('click', () => {
+            const email = 'altonwong16@hotmail.com';
+            const subject = 'Inquiry';
+            const body = 'Hello, I’d like to get in touch.';
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+
+        document.getElementById('email-secondary-btn').addEventListener('click', () => {
+            const email = 'altonwong16@hotmail.com';
+            const subject = 'Inquiry';
+            const body = 'Hi, I’d like to discuss further.';
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
+
     </script>
 </body>
 </html>
