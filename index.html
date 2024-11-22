@@ -4,26 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkylineDevs</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link to Font Awesome icons -->
 </head>
 <body>
 
-    <!-- Header with Navbar -->
+    <!-- Header with Logo -->
     <header class="header">
         <div class="container">
             <div class="logo">Skyline<span class="highlight">Devs</span></div>
-            <nav class="nav">
-                <ul class="nav-links">
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
         </div>
     </header>
 
@@ -37,73 +25,56 @@
                 <a href="#services" class="btn">Explore More</a>
                 <a href="#contact" class="btn btn-secondary">Contact Us</a>
             </div>
+            <br>
+            <br>
+            <br>
+            <p>© This site was built my code in 30 mins by code and hosted.</p>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2>Our Expertise</h2>
-            <div class="service-cards">
-                <div class="card">
-                    <h3>Design</h3>
-                    <p>Transforming spaces with creative, simple yet functional designs.</p>
-                </div>
-                <div class="card">
-                    <h3>Construction</h3>
-                    <p>Delivering quality construction for all types of projects.</p>
-                </div>
-                <div class="card">
-                    <h3>Project Management</h3>
-                    <p>Managing projects efficiently to ensure timely completion.</p>
+    <!-- Unique Selling Proposition Section -->
+    <section class="ups" id="ups">
+        <div class="ups-background">
+            <div class="container">
+                <h2>Why Choose Us?</h2>
+                <div class="ups-content">
+                    <div class="ups-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <h3>Innovative Solutions</h3>
+                            <p>We offer creative solutions tailored to meet your specific needs and challenges.</p>
+                        </div>
+                    </div>
+                    <div class="ups-item">
+                        <i class="fas fa-cogs"></i>
+                        <div>
+                            <h3>Reliable Performance</h3>
+                            <p>Our service is designed for reliability and efficiency, ensuring a smooth experience every time.</p>
+                        </div>
+                    </div>
+                    <div class="ups-item">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h3>Customer First</h3>
+                            <p>We put your satisfaction first, always striving to exceed your expectations with personalized care.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- UPS Section (Unique Selling Proposition) -->
-<!-- UPS Section (Unique Selling Proposition) -->
-<section class="ups" id="ups">
-    <div class="ups-background">
-        <div class="container">
-            <h2>Why Choose Us?</h2>
-            <p class="ups-description">Explore our core strengths and discover why we're the best choice for your needs.</p>
-            <br>
-            <br>
-            <div class="ups-content">
-                <div class="ups-item">
-                    <h3>Innovative Solutions</h3>
-                    <p>We offer creative solutions tailored to meet your specific needs and challenges.</p>
-                    <span class="icon">🚀</span>
-                </div>
-                <div class="ups-item">
-                    <h3>Reliable Performance</h3>
-                    <p>Our service is designed for reliability and efficiency, ensuring a smooth experience every time.</p>
-                    <span class="icon">⚡</span>
-                </div>
-                <div class="ups-item">
-                    <h3>Customer First</h3>
-                    <p>We put your satisfaction first, always striving to exceed your expectations with personalized care.</p>
-                    <span class="icon">💖</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <h2>Contact Us</h2>
-            <p class="contact-description">Reach out to us via Email or Telegram. We’d love to hear from you!</p>
-
+            <p>Reach out to us via Email or Telegram. We’d love to hear from you!</p>
             <div class="contact-buttons">
-                <button class="btn btn-primary" id="email-secondary-btn">Send an Email</button>
+                <button class="btn btn-primary" id="email-btn">Send an Email</button>
                 <a href="https://t.me/Aathithya_J" class="btn btn-secondary" target="_blank">Message on Telegram</a>
             </div>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer class="footer">
@@ -112,39 +83,242 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Navbar Toggle -->
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+    <script src="script.js"></script>
+    <style>
+        /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('nav-active');
-            hamburger.classList.toggle('toggle');
-        });
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1f1f1f;
+    color: #fff;
+    line-height: 1.6;
+}
 
-        // Close the navbar when a link is clicked (optional)
-        const links = document.querySelectorAll('.nav-links a');
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('nav-active');
-                hamburger.classList.remove('toggle');
-            });
-        });
-        // JavaScript to Handle Email
-        document.getElementById('email-btn').addEventListener('click', () => {
-            const email = 'altonwong16@hotmail.com';
-            const subject = 'Inquiry';
-            const body = 'Hello, I’d like to get in touch.';
-            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        });
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000;
+    padding: 20px 0;
+    z-index: 100;
+}
 
-        document.getElementById('email-secondary-btn').addEventListener('click', () => {
-            const email = 'altonwong16@hotmail.com';
-            const subject = 'Inquiry';
-            const body = 'Hi, I’d like to discuss further.';
-            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        });
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
 
-    </script>
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.highlight {
+    color: #ff6347;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #ff6347;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-buttons a {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.hero-buttons .btn {
+    background-color: #ff6347;
+    color: #fff;
+}
+
+.hero-buttons .btn-secondary {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+/* Unique Selling Proposition Section */
+/* Unique Selling Proposition Section */
+.ups {
+    background-color: #222;
+    padding: 80px 0;
+}
+
+.ups-background {
+    position: relative;
+    z-index: 1;
+}
+
+.ups h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #ff6347;
+}
+
+.ups-content {
+    display: flex;
+    flex-direction: column; /* Arrange cards vertically */
+    gap: 40px;
+    align-items: center; /* Center the cards horizontally */
+    justify-content: center; /* Center the cards vertically */
+}
+
+.ups-item {
+    align-items: center;
+    display: flex;
+    width: 80%;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ups-item i {
+    font-size: 3rem;
+    margin-right: 20px;
+    margin-left: 20px;
+    color: #ff6347;
+}
+
+.ups-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #ff6347;
+}
+
+.ups-item p {
+    font-size: 1rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background-color: #1f1f1f;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ff6347;
+}
+
+.contact-buttons a,
+.contact-buttons button {
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin: 10px;
+    display: inline-block;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.contact-buttons .btn {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+}
+
+.contact-buttons .btn-secondary {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+/* Footer */
+.footer {
+    padding: 20px 0;
+    background-color: #000;
+    text-align: center;
+}
+
+.footer p {
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons .btn, 
+    .hero-buttons .btn-secondary {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .ups-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .ups-item {
+        flex-basis: 100%;
+    }
+
+    .contact-buttons .btn, 
+    .contact-buttons .btn-secondary {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+    </style>
 </body>
 </html>
