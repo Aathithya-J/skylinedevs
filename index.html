@@ -83,7 +83,11 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('email-btn').addEventListener('click', function() {
+            window.location.href = 'mailto:contact@skyline.com?subject=Inquiry&body=Hello, I would like to inquire about your services.';
+        });
+    </script>
     <style>
         /* Global Styles */
 * {
