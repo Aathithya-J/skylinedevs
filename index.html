@@ -3,326 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkylineDevs</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link to Font Awesome icons -->
+    <title>SkylineDevs Solutions - Transform Your Online Presence</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #fff;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles */
+        header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 10px 20px; /* Add padding to the header */
+}
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #333;
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #867070;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 9999px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #555;
+            color: #fff;
+        }
+
+        /* Hero section styles */
+        .hero {
+            padding: 160px 0 80px;
+        }
+        h1 {
+            font-size: 64px;
+            line-height: 1.2;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+        .cta-btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-size: 18px;
+            font-weight: 500;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            border: 2px solid #333;
+            border-radius: 9999px;
+            transition: box-shadow 0.3s ease;
+            position: relative;
+        }
+        .cta-btn:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .cta-btn::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-color: rgba(255, 255, 255, 0.2);
+            filter: blur(20px);
+            z-index: -1;
+        }
+
+        /* About section styles */
+        .about {
+            padding: 80px 0;
+        }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+        h2 {
+            font-size: 36px;
+            margin-bottom: 24px;
+        }
+        .about-text {
+            font-size: 18px;
+            color: #555;
+        }
+        .code-editor {
+            background-color: #1E1E1E;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 14px;
+            color: #D4D4D4;
+            position: relative;
+            overflow: hidden;
+        }
+        .code-content {
+            white-space: pre-wrap;
+        }
+        .code-dots {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            display: flex;
+            gap: 8px;
+            padding: 8px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 9999px;
+        }
+        .code-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Mobile menu styles */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #fff;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu-toggle {
+                display: block;
+            }
+            h1 {
+                font-size: 36px;
+            }
+            .hero {
+                padding: 120px 0 60px;
+            }
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .code-editor {
+                margin-top: 40px;
+            }
+            .nav-links .btn {
+                margin-top: 10px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 28px;
+            }
+            .cta-btn {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+            h2 {
+                font-size: 28px;
+            }
+            .about-text {
+                font-size: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Header with Logo -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">Skyline<span class="highlight">Devs</span></div>
-        </div>
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">SkylineDevs</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="https://t.me/Aathithya_J" class="btn" target="_blank">Contact via Telegram</a>
+            </div>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="overlay"></div>
-        <div class="hero-content">
-            <h1>Building <span>Your Vision</span> Into Reality</h1>
-            <p>Your trusted partner for innovative website solutions.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn">Explore More</a>
-                <a href="#contact" class="btn btn-secondary">Contact Us</a>
-            </div>
-            <br>
-            <br>
-            <br>
-            <p>© This site was built my code in 30 mins by code and hosted.</p>
-        </div>
-    </section>
-
-    <!-- Unique Selling Proposition Section -->
-    <section class="ups" id="ups">
-        <div class="ups-background">
+    <main>
+        <section class="hero">
             <div class="container">
-                <h2>Why Choose Us?</h2>
-                <div class="ups-content">
-                    <div class="ups-item">
-                        <i class="fas fa-lightbulb"></i>
-                        <div>
-                            <h3>Innovative Solutions</h3>
-                            <p>We offer creative solutions tailored to meet your specific needs and challenges.</p>
-                        </div>
+                <h1>Let SkylineDevs transform your online presence</h1>
+                <a href="#contact" class="cta-btn">Start Your Project</a>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div>
+                        <h2>Who we are</h2>
+                        <p class="about-text">
+                            At SkylineDevs Solutions, we are committed to providing cutting-edge 
+                            web development services that empower businesses to thrive online. 
+                            Our innovative approach and expert team are dedicated to creating 
+                            stunning, high-performance websites that drive results and elevate 
+                            your digital presence.
+                        </p>
                     </div>
-                    <div class="ups-item">
-                        <i class="fas fa-cogs"></i>
-                        <div>
-                            <h3>Reliable Performance</h3>
-                            <p>Our service is designed for reliability and efficiency, ensuring a smooth experience every time.</p>
+                    <div class="code-editor">
+                        <div class="code-content">
+<span style="color: #569CD6;">const</span> <span style="color: #4FC1FF;">SkylineDevs</span> = {
+  <span style="color: #9CDCFE;">expertise</span>: [<span style="color: #CE9178;">'HTML'</span>, <span style="color: #CE9178;">'CSS'</span>],
+  <span style="color: #9CDCFE;">services</span>: [
+    <span style="color: #CE9178;">'Custom Web Development'</span>,
+    <span style="color: #CE9178;">'Progressive Web Apps'</span>,
+  ],
+  <span style="color: #DCDCAA;">deliverAmazingWebsites</span>: () => {
+    <span style="color: #C586C0;">return</span> <span style="color: #CE9178;">"Stunning designs with powerful functionality"</span>;
+  }
+};
+
+<span style="color: #569CD6;">console</span>.<span style="color: #DCDCAA;">log</span>(WebCraft.<span style="color: #DCDCAA;">deliverAmazingWebsites</span>());
                         </div>
-                    </div>
-                    <div class="ups-item">
-                        <i class="fas fa-users"></i>
-                        <div>
-                            <h3>Customer First</h3>
-                            <p>We put your satisfaction first, always striving to exceed your expectations with personalized care.</p>
+                        <div class="code-dots">
+                            <div class="code-dot"></div>
+                            <div class="code-dot"></div>
+                            <div class="code-dot"></div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Reach out to us via Email or Telegram. We’d love to hear from you!</p>
-            <div class="contact-buttons">
-                <button class="btn btn-primary" id="email-btn">Send an Email</button>
-                <a href="https://t.me/Aathithya_J" class="btn btn-secondary" target="_blank">Message on Telegram</a>
+        </section>
+        <br>
+        <br>
+        <section id="contact" class="about">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>We’d love to hear from you! Reach out to us through Telegram for instant assistance.</p>
+                <br>
+                <a href="https://t.me/Aathithya_J" class="btn" target="_blank">Contact via Telegram</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>© 2024 SkylineDevs. Building with Integrity.</p>
-        </div>
-    </footer>
+        </section>
+    </main>
 
     <script>
-        document.getElementById('email-btn').addEventListener('click', function() {
-            window.location.href = 'mailto:contact@skyline.com?subject=Inquiry&body=Hello, I would like to inquire about your services.';
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
-    <style>
-        /* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1f1f1f;
-    color: #fff;
-    line-height: 1.6;
-}
-
-/* Header */
-.header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #000;
-    padding: 20px 0;
-    z-index: 100;
-}
-
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
-
-.logo {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #fff;
-}
-
-.highlight {
-    color: #ff6347;
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
-    background: url('hero-bg.jpg') no-repeat center center/cover;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.hero .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.hero-content {
-    text-align: center;
-    z-index: 1;
-}
-
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-}
-
-.hero h1 span {
-    color: #ff6347;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.hero-buttons a {
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 10px;
-    display: inline-block;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.hero-buttons .btn {
-    background-color: #ff6347;
-    color: #fff;
-}
-
-.hero-buttons .btn-secondary {
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-}
-
-/* Unique Selling Proposition Section */
-/* Unique Selling Proposition Section */
-.ups {
-    background-color: #222;
-    padding: 80px 0;
-}
-
-.ups-background {
-    position: relative;
-    z-index: 1;
-}
-
-.ups h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #ff6347;
-}
-
-.ups-content {
-    display: flex;
-    flex-direction: column; /* Arrange cards vertically */
-    gap: 40px;
-    align-items: center; /* Center the cards horizontally */
-    justify-content: center; /* Center the cards vertically */
-}
-
-.ups-item {
-    align-items: center;
-    display: flex;
-    width: 80%;
-    background-color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.ups-item i {
-    font-size: 3rem;
-    margin-right: 20px;
-    margin-left: 20px;
-    color: #ff6347;
-}
-
-.ups-item h3 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    color: #ff6347;
-}
-
-.ups-item p {
-    font-size: 1rem;
-}
-
-/* Contact Section */
-.contact {
-    padding: 80px 0;
-    background-color: #1f1f1f;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #ff6347;
-}
-
-.contact-buttons a,
-.contact-buttons button {
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 5px;
-    margin: 10px;
-    display: inline-block;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.contact-buttons .btn {
-    background-color: #ff6347;
-    color: #fff;
-    border: none;
-}
-
-.contact-buttons .btn-secondary {
-    background-color: transparent;
-    border: 2px solid #fff;
-    color: #fff;
-}
-
-/* Footer */
-.footer {
-    padding: 20px 0;
-    background-color: #000;
-    text-align: center;
-}
-
-.footer p {
-    color: #fff;
-    font-size: 1rem;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .hero-buttons .btn, 
-    .hero-buttons .btn-secondary {
-        padding: 8px 16px;
-        font-size: 0.9rem;
-    }
-
-    .ups-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .ups-item {
-        flex-basis: 100%;
-    }
-
-    .contact-buttons .btn, 
-    .contact-buttons .btn-secondary {
-        padding: 10px 20px;
-        font-size: 1rem;
-    }
-}
-
-    </style>
 </body>
 </html>
